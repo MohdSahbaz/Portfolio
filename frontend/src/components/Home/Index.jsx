@@ -36,71 +36,74 @@ const Index = () => {
       }}
     >
       <div
-        className="w-full bg-gray-950/[0.5] px-28 py-32 text-white"
+        className="w-full bg-gray-950/[0.5] md:px-28 md:pt-32  px-5 pt-10 pb-5  text-white flex flex-col items-start"
         style={{
           minHeight: "calc(100vh - 47.8px)",
         }}
       >
-        <h1 className="text-4xl font-bold animate-bounce">
-          {profileInfo.name}
+        <p className="text-xl md:mb-2 mb-6 font-semibold">Hello,</p>
+        <h1 className="md:text-4xl text-3xl font-bold animate-bounce">
+          I am {profileInfo.name}
         </h1>
         <p className="animate-pulse mb-7">{profileInfo.title}</p>
         <a
           href={profileInfo.resumeLink}
-          className="border px-6 py-2 rounded-md font-bold hover:bg-white/[0.5] transition-colors duration-300"
+          className="border px-6 py-2 rounded-md font-bold hover:bg-white/[0.5] transition-colors duration-300 mb-4"
         >
           Resume
         </a>
 
         {/* Social Icons */}
-        {profileInfo.socialLinks && (
-          <div className="absolute left-8 bottom-8 flex md:flex-row md:space-x-4 md:space-y-0 space-y-2 items-center flex-col justify-center">
-            <a
-              href={profileInfo.socialLinks.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href={profileInfo.socialLinks.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiYoutube className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href={profileInfo.socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <CiLinkedin className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href={profileInfo.socialLinks.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiGithub className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
-            </a>
-          </div>
-        )}
+        <div className="flex justify-between w-full items-center flex-wrap gap-10 mt-20">
+          {profileInfo.socialLinks && (
+            <div className="flex space-x-4">
+              <a
+                href={profileInfo.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href={profileInfo.socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiYoutube className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href={profileInfo.socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CiLinkedin className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href={profileInfo.socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiGithub className="text-2xl cursor-pointer hover:scale-110 transition-transform" />
+              </a>
+            </div>
+          )}
 
-        {/* Love Count */}
-        <div className="absolute right-8 bottom-8 text-center">
-          <p className="text-lg">Tap to Appreciate</p>
-          <div className="flex justify-center items-center gap-2 mt-2">
-            <b className="text-2xl">{profileInfo.loveCount}</b>
-            <GiSelfLove
-              className="cursor-pointer text-5xl hover:scale-110 transition-transform"
-              onClick={() => setShowForm(true)}
-            />
+          {/* Love Count */}
+          <div className="text-center">
+            <p className="text-lg">Tap to Appreciate</p>
+            <div className="flex justify-center items-center gap-2 mt-2">
+              <b className="text-2xl">{profileInfo.loveCount}</b>
+              <GiSelfLove
+                className="cursor-pointer text-5xl hover:scale-110 transition-transform"
+                onClick={() => setShowForm(true)}
+              />
+            </div>
           </div>
         </div>
 
         {/* Love Form */}
         {showForm && (
-          <div className="absolute right-8 bottom-20 p-4 rounded-md border border-white bg-black">
+          <div className="absolute right-8 bottom-2 p-4 rounded-md border border-white bg-black">
             <h3 className="text-lg font-bold">Please fill details</h3>
             <form onSubmit={handleSubmit}>
               <div className="my-2">
