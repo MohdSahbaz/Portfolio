@@ -36,6 +36,14 @@ const profileSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  about1: {
+    type: String,
+    required: true,
+  },
+  about2: {
+    type: String,
+    required: false,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
