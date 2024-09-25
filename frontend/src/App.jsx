@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./components/Home/Index";
 import NavBar from "./components/NavBar/NavBar";
 import About from "./components/About/About";
+import Skills from "./components/Skills/Skills";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "skills",
+        element: <Skills />,
       },
     ],
   },

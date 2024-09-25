@@ -39,7 +39,7 @@ const HomeProvider = ({ children }) => {
       await getProfileInfo();
     };
     fetchData();
-  }, [handleLoveCount]);
+  }, []);
 
   return (
     <HomeContext.Provider value={{ error, profileInfo, handleLoveCount }}>

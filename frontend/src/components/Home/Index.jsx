@@ -3,7 +3,7 @@ import { FiYoutube, FiGithub } from "react-icons/fi";
 import { CiLinkedin } from "react-icons/ci";
 import { GiSelfLove } from "react-icons/gi";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import Loader from "../Loader/Loader";
 import { HomeContext } from "../contexts/HomeContext";
