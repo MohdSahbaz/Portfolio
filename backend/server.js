@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // Load environment variables from .env file
@@ -17,15 +18,12 @@ connectDB();
 // all routes import
 const nameRoute = require("./routes/profileRoute");
 const loveRoute = require("./routes/loveRoute");
+const skillRoute = require("./routes/skillRoute");
 
 // routes
-
-app.get("/", (req, res) => {
-  res.send("Welcome to solker portfolio server");
-});
-
 app.use("/api", nameRoute);
 app.use("/api", loveRoute);
+app.use("/api", skillRoute);
 
 app.listen(PORT, () =>
   console.log(`Server running on url: http://localhost:${PORT}`)
