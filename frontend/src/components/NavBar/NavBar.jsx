@@ -14,46 +14,46 @@ const NavBar = () => {
           href="https://github.com/MohdSahbaz"
           rel="noopener noreferrer"
           target="_blank"
-          className="md:hidden block bg-gray-700 hover:bg-gray-600 text-white font-semibold py-1 px-4 rounded-full transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+          className="md:hidden block bg-gray-700 hover:text-yellow-500 text-white font-semibold py-1 px-4 rounded transition duration-300 ease-in-out shadow-md hover:shadow-lg"
         >
-          GitHub
+          Hire me
         </a>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex md:gap-10 gap-5">
           <li
             onClick={() => navigate("/")}
-            className="hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+            className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer"
           >
             Home
           </li>
           <li
             onClick={() => navigate("/about")}
-            className="hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+            className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer"
           >
             About
           </li>
           <li
             onClick={() => navigate("/skills")}
-            className="hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+            className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer"
           >
             Skills
           </li>
           <li
             onClick={() => navigate("/projects")}
-            className="hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+            className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer"
           >
             Projects
           </li>
           <li
             onClick={() => navigate("/education")}
-            className="hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+            className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer"
           >
             Education
           </li>
           <li
             onClick={() => navigate("/contact")}
-            className="hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+            className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer"
           >
             Contact
           </li>
@@ -61,12 +61,12 @@ const NavBar = () => {
 
         {/* GitHub Button (Visible on larger screens) */}
         <a
-          href="https://github.com/MohdSahbaz"
+          href="mailto:your-email@example.com?subject=Job Opportunity for MERN Stack Developer"
           rel="noopener noreferrer"
           target="_blank"
-          className="hidden md:block bg-gray-700 hover:bg-gray-600 text-white font-semibold py-1 px-4 rounded-full transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+          className="hidden md:block bg-gray-700 hover:text-yellow-500 text-white font-semibold py-1 px-4 rounded transition duration-300 ease-in-out shadow-md hover:shadow-lg"
         >
-          GitHub
+          Hire me
         </a>
 
         {/* Hamburger Icon for mobile */}
