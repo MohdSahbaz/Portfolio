@@ -8,17 +8,16 @@ const NavBar = () => {
   return (
     <>
       {/* Navigation Menu */}
-      <div className="bg-gradient-to-tr from-slate-950 to-slate-800 text-white px-6 py-2 flex justify-between items-center shadow-md shadow-white">
-        {/* GitHub Button (Visible on small screens) */}
+      <div className="bg-gradient-to-tr from-slate-950 to-slate-800 text-white px-6 py-2 flex justify-between items-center shadow-md shadow-gray-800 sticky top-0 z-50">
+        {/* Hire me Button (Visible on small screens) */}
         <a
-          href="https://github.com/MohdSahbaz"
+          href="mailto:your-email@example.com?subject=Job Opportunity for MERN Stack Developer"
           rel="noopener noreferrer"
           target="_blank"
-          className="md:hidden block bg-gray-700 hover:text-yellow-500 text-white font-semibold py-1 px-4 rounded transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+          className="md:hidden block bg-gray-700 hover:text-yellow-400 text-white font-semibold py-1 px-4 rounded transition duration-300 ease-in-out shadow-md hover:shadow-lg"
         >
           Hire me
         </a>
-
         {/* Desktop Menu */}
         <ul className="hidden md:flex md:gap-10 gap-5">
           <li
@@ -59,12 +58,12 @@ const NavBar = () => {
           </li>
         </ul>
 
-        {/* GitHub Button (Visible on larger screens) */}
+        {/* Hire me Button (Visible on larger screens) */}
         <a
           href="mailto:your-email@example.com?subject=Job Opportunity for MERN Stack Developer"
           rel="noopener noreferrer"
           target="_blank"
-          className="hidden md:block bg-gray-700 hover:text-yellow-500 text-white font-semibold py-1 px-4 rounded transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+          className="hidden md:block bg-gray-700 hover:text-yellow-400 text-white font-semibold py-1 px-4 rounded transition duration-300 ease-in-out shadow-md hover:shadow-lg"
         >
           Hire me
         </a>
@@ -95,7 +94,7 @@ const NavBar = () => {
 
       {/* Mobile Menu (Visible on small screens) */}
       <div
-        className={`md:hidden bg-gradient-to-tr from-slate-950 to-slate-800 flex flex-col text-white transition-all duration-300 ease-in-out absolute right-0 px-10 py-4 z-50 ${
+        className={`rounded-es-md md:hidden bg-gradient-to-tr from-slate-950 to-slate-800 flex flex-col text-white transition-all duration-300 ease-in-out absolute right-0 px-10 py-4 z-50 ${
           isOpen
             ? "max-h-screen opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"

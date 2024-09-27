@@ -44,7 +44,7 @@ const Index = () => {
         }}
       >
         <p className="text-xl md:mb-2 mb-1 font-semibold">Hello, I am </p>
-        <h1 className="md:text-4xl text-3xl font-bold animate-bounce text-yellow-500">
+        <h1 className="md:text-4xl text-3xl font-bold animate-bounce text-yellow-400">
           {profileInfo.name}
         </h1>
         <p className="animate-pulse mb-7">{profileInfo.title}</p>

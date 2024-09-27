@@ -24,13 +24,12 @@ const About = () => {
     >
       <h1 className="md:text-3xl text-2xl font-bold mb-6">ABOUT ME</h1>
 
-      {/* Name Section */}
-      <h1 className="text-xl md:text-2xl font-semibold mb-4 text-yellow-500">
-        I am {profileInfo.name || "Your Name"}
-      </h1>
-
       {/* About Section */}
-      <div className="space-y-6 text-lg leading-relaxed">
+      <div className="space-y-6 text-lg leading-relaxed bg-gray-800 rounded-lg shadow-lg p-6">
+        {/* Name Section */}
+        <h1 className="text-xl md:text-2xl font-semibold mb-4 text-yellow-400">
+          I am {profileInfo.name || "Your Name"}
+        </h1>
         {profileInfo.about1 && <p>{profileInfo.about1}</p>}
         {profileInfo.about2 && <p>{profileInfo.about2}</p>}
       </div>

@@ -12,19 +12,24 @@ const Skills = () => {
         background: "linear-gradient(to right, #001F3F, #002f4f, #3A6D8C)",
       }}
     >
-      <h1 className="md:text-3xl text-2xl font-bold mb-8">SKILLS</h1>
+      <h1 className="md:text-3xl text-2xl font-bold mb-8 ">SKILLS</h1>
 
       {/* Group skills by category */}
       {["Front-End", "Back-End", "Tools"].map((category) => (
-        <div className="mb-6" key={category}>
-          <h2 className="text-xl md:text-2xl font-semibold mb-4">{category}</h2>
+        <div
+          className="mb-6 bg-gray-800 rounded-lg shadow-lg p-6 group"
+          key={category}
+        >
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 group-hover:text-yellow-400">
+            {category}
+          </h2>
           <div className="flex flex-wrap gap-6">
             {skills
               .filter((skill) => skill.category === category) // Filter skills by category
               .map((skill) => (
                 <div
                   key={skill.name}
-                  className="w-24 md:w-32 h-24 md:h-32 flex flex-col items-center justify-center bg-gray-800 rounded-lg p-3 shadow-md"
+                  className="w-24 md:w-32 h-24 md:h-32 flex flex-col items-center justify-center bg-gray-700/[0.5] rounded-lg p-3 shadow-md"
                 >
                   <img
                     src={skill.icon}
