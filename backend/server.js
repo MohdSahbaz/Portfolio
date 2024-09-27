@@ -19,11 +19,17 @@ connectDB();
 const nameRoute = require("./routes/profileRoute");
 const loveRoute = require("./routes/loveRoute");
 const skillRoute = require("./routes/skillRoute");
+const projectRoutes = require("./routes/projectRoutes");
+const educationRoutes = require("./routes/educationRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
 // routes
 app.use("/api", nameRoute);
 app.use("/api", loveRoute);
 app.use("/api", skillRoute);
+app.use("/api", projectRoutes);
+app.use("/api", educationRoutes);
+app.use("/api", contactRoutes);
 
 app.listen(PORT, () =>
   console.log(`Server running on url: http://localhost:${PORT}`)

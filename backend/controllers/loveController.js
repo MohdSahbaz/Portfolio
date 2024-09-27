@@ -4,7 +4,6 @@ const Profile = require("../models/profile");
 const handleLove = async (req, res) => {
   const { name, email } = req.body;
 
-  // Check if name and email are provided
   if (!name || !email) {
     return res.status(400).json({ message: "Name and email are required" });
   }
@@ -33,7 +32,7 @@ const handleLove = async (req, res) => {
     }
 
     profile.loveCount += 1; // Increment loveCount by 1
-    await profile.save(); // Save the updated profile
+    await profile.save();
 
     return res.status(201).json({ message: "Love sent successfully" });
   } catch (error) {
