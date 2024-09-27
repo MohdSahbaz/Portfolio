@@ -8,12 +8,14 @@ const HomeContext = createContext();
 const HomeProvider = ({ children }) => {
   const [profileInfo, setProfileInfo] = useState(null);
   const [error, setError] = useState(null);
+  const [proError, setProError] = useState(null);
 
   const getProfileInfo = async () => {
     try {
       const { data } = await axios.get(`${apiUrl}/profile`);
       setProfileInfo(data);
     } catch (error) {
+      setProError("Error while fetching home info");
       console.log("Error while fetching home info: " + error.message);
     }
   };
@@ -42,7 +44,9 @@ const HomeProvider = ({ children }) => {
   }, []);
 
   return (
-    <HomeContext.Provider value={{ error, profileInfo, handleLoveCount }}>
+    <HomeContext.Provider
+      value={{ error, profileInfo, handleLoveCount, proError }}
+    >
       {children}
     </HomeContext.Provider>
   );
