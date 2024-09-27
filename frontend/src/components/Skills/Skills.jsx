@@ -29,7 +29,7 @@ const Skills = () => {
               .map((skill) => (
                 <div
                   key={skill.name}
-                  className="w-24 md:w-32 h-24 md:h-32 flex flex-col items-center justify-center bg-gray-700/[0.5] rounded-lg p-3 shadow-md"
+                  className="w-28 md:w-32 h-28 md:h-36 flex flex-col items-center justify-center bg-gray-700/[0.5] rounded-lg p-3 shadow-md"
                 >
                   <img
                     src={skill.icon}

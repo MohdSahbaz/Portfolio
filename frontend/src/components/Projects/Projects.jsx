@@ -51,7 +51,7 @@ const Projects = () => {
       <h1 className="md:text-3xl text-2xl font-bold mb-8">PROJECTS</h1>
 
       {/* Slider Section */}
-      <div className="mb-10 mx-5 md:mx-0 bg-gray-800 rounded-lg shadow-lg">
+      <div className="mb-10 mx-5 md:mx-0 bg-gray-800 rounded-lg shadow-lg p-2">
         <Slider {...sliderSettings}>
           {projects.map((project, index) => (
             <a
@@ -68,7 +68,7 @@ const Projects = () => {
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-40 object-cover rounded-lg shadow-lg"
+                className="w-full h-40 object-cover rounded-lg shadow-lg bg-gray-700 p-2"
               />
             </a>
           ))}
