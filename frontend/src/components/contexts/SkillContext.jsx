@@ -7,6 +7,7 @@ export const SkillContext = createContext();
 
 export const SkillProvider = ({ children }) => {
   const [skills, setSkills] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   const fetchSkills = async () => {
@@ -14,8 +15,10 @@ export const SkillProvider = ({ children }) => {
       const response = await axios.get(`${apiUrl}/skills`);
       setSkills(response.data);
       setError(false);
+      setLoading(false);
     } catch (error) {
       setError(true);
+      setLoading(false);
       console.error("Error fetching skills:", error);
     }
   };
@@ -25,7 +28,7 @@ export const SkillProvider = ({ children }) => {
   }, []);
 
   return (
-    <SkillContext.Provider value={{ skills, error }}>
+    <SkillContext.Provider value={{ skills, error, loading }}>
       {children}
     </SkillContext.Provider>
   );

@@ -3,9 +3,9 @@ import { EducationContext } from "../contexts/EducationContext";
 import Loader from "../Loader/Loader";
 
 const Education = () => {
-  const { educationData, error } = useContext(EducationContext);
+  const { educationData, error, loading } = useContext(EducationContext);
 
-  if (educationData.length < 0 && !error) {
+  if (loading) {
     return <Loader />;
   }
 

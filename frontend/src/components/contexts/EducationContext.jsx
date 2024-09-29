@@ -7,6 +7,7 @@ export const EducationContext = createContext();
 
 export const EducationProvider = ({ children }) => {
   const [educationData, setEducationData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -14,17 +15,18 @@ export const EducationProvider = ({ children }) => {
       try {
         const response = await axios.get(`${apiUrl}/education`);
         setEducationData(response.data);
+        setLoading(false);
         setError(false);
       } catch (error) {
+        setLoading(false);
         setError(true);
-        console.error("Failed to fetch education data", error);
       }
     };
     fetchEducation();
   }, []);
 
   return (
-    <EducationContext.Provider value={{ educationData, error }}>
+    <EducationContext.Provider value={{ educationData, error, loading }}>
       {children}
     </EducationContext.Provider>
   );

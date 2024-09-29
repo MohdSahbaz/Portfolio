@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { SkillContext } from "../contexts/SkillContext";
+import Loader from "../Loader/Loader";
 
 const Skills = () => {
-  const { skills, error } = useContext(SkillContext);
+  const { skills, error, loading } = useContext(SkillContext);
+
+  if (loading) return <Loader />;
 
   if (error) {
     return (
