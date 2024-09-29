@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <>
       {/* Navigation Menu */}
-      <div className="bg-gradient-to-tr from-slate-950 to-slate-800 text-white px-6 py-2 flex justify-between items-center shadow-md shadow-gray-800 sticky top-0 z-50">
+      <div className="bg-gradient-to-tr from-slate-950 to-slate-800 text-white md:px-6 px-4 py-2 flex justify-between items-center shadow-md shadow-gray-800 sticky top-0 z-50">
         {/* Hire me Button (Visible on small screens) */}
         <a
           href="mailto:your-email@example.com?subject=Job Opportunity for MERN Stack Developer"
@@ -94,7 +94,7 @@ const NavBar = () => {
 
       {/* Mobile Menu (Visible on small screens) */}
       <div
-        className={`rounded-es-md md:hidden bg-gradient-to-tr from-slate-950 to-slate-800 flex flex-col text-white transition-all duration-300 ease-in-out absolute right-0 px-10 py-4 z-50 ${
+        className={`rounded-es-md md:hidden bg-gradient-to-tr from-slate-950 to-slate-800 flex flex-col text-white transition-all duration-300 ease-in-out fixed right-0 px-10 py-4 z-50 ${
           isOpen
             ? "max-h-screen opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"
