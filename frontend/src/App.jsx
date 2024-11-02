@@ -8,6 +8,12 @@ import Projects from "./components/Projects/Projects";
 import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 
+// providers
+import { HomeProvider } from "./components/contexts/HomeContext.jsx";
+import { SkillProvider } from "./components/contexts/SkillContext.jsx";
+import { ProjectProvider } from "./components/contexts/ProjectContext.jsx";
+import { EducationProvider } from "./components/contexts/EducationContext.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,23 +21,43 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Index />,
+        element: (
+          <HomeProvider>
+            <Index />
+          </HomeProvider>
+        ),
       },
       {
         path: "about",
-        element: <About />,
+        element: (
+          <HomeProvider>
+            <About />
+          </HomeProvider>
+        ),
       },
       {
         path: "skills",
-        element: <Skills />,
+        element: (
+          <SkillProvider>
+            <Skills />
+          </SkillProvider>
+        ),
       },
       {
         path: "projects",
-        element: <Projects />,
+        element: (
+          <ProjectProvider>
+            <Projects />
+          </ProjectProvider>
+        ),
       },
       {
         path: "education",
-        element: <Education />,
+        element: (
+          <EducationProvider>
+            <Education />
+          </EducationProvider>
+        ),
       },
       {
         path: "contact",
