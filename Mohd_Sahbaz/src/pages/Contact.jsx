@@ -158,7 +158,7 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
               <button
                 type="submit"
                 disabled={sending}
-                className="bg-emerald-700 text-white py-2 rounded-sm hover:bg-emerald-900 transition"
+                className="bg-emerald-700 cursor-pointer  text-white py-2 rounded-sm hover:bg-emerald-900 transition"
               >
                 {sending ? "Sending..." : "Send Message"}
               </button>
