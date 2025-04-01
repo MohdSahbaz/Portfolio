@@ -1,4 +1,15 @@
-import React, { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaBook,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -9,6 +20,10 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
   const formRef = useRef();
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   const sendEmail = (e) => {
     setSending(true);
@@ -37,75 +52,118 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
   };
 
   return (
-    <section
+    <div
       id="contact"
-      className="min-h-screen flex flex-col justify-center items-center py-16 px-5"
-      style={{ background: darkMode ? nightMode : dayMode }}
+      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col items-center"
+      style={{
+        background: darkMode ? nightMode : dayMode,
+      }}
     >
-      <h1
-        className={`text-4xl font-bold mb-8 ${
-          darkMode ? "text-white" : "text-black"
-        }`}
+      <div
+        className={`${
+          darkMode ? "bg-gray-800/[0.6] text-gray-300" : "bg-gray-100/[0.9]"
+        } p-5 rounded-sm shadow-md mb-5`}
       >
-        Contact Me
-      </h1>
+        <div className="max-w-4xl w-full bg-white/[0.5]  text-gray-900 p-6 rounded-sm shadow-lg">
+          {/* Contact Information */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h2 className="text-xl font-semibold text-emerald-800 flex items-center">
+                Get in Touch
+              </h2>
+              <p className="text-gray-600 mt-2">
+                Feel free to reach out through social media, phone or email!
+              </p>
+              <div className="mt-4 space-y-3">
+                <p className="flex items-center text-gray-700">
+                  <FaMapMarkerAlt className="text-emerald-700 mr-2" /> Mumbai,
+                  India
+                </p>
+                <p className="flex items-center text-gray-700">
+                  <FaPhone className="text-emerald-700 mr-2" /> +913 630 7464
+                </p>
+                <p className="flex items-center text-gray-700">
+                  <FaEnvelope className="text-emerald-700 mr-2" />{" "}
+                  cshabaz188@gmail.com
+                </p>
+              </div>
 
-      <form
-        ref={formRef}
-        onSubmit={sendEmail}
-        className="bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 space-y-6"
-      >
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          />
-        </div>
+              {/* Social Media */}
+              <div className="mt-4 flex space-x-4">
+                <a
+                  href="https://www.linkedin.com/in/mohd-sahbaz-chaudhary/"
+                  target="blank_"
+                  className="text-emerald-700 hover:text-emerald-900"
+                >
+                  <FaLinkedin size={24} />
+                </a>
+                <a
+                  href="https://github.com/MohdSahbaz"
+                  target="blank_"
+                  className="text-emerald-700 hover:text-emerald-900"
+                >
+                  <FaGithub size={24} />
+                </a>
+                <a
+                  href="https://www.instagram.com/_sahbaz/"
+                  target="blank_"
+                  className="text-emerald-700 hover:text-emerald-900"
+                >
+                  <FaInstagram size={24} />
+                </a>
+              </div>
+            </div>
 
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            required
-          />
-        </div>
-
-        <div>
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-            rows="4"
-            required
-          ></textarea>
-        </div>
-
-        <div>
-          <button
-            type="submit"
-            disabled={sending}
-            className={`w-full py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300}`}
-          >
-            {sending ? "Sending..." : "Send Message"}
-          </button>
-        </div>
-
-        {message && (
-          <div
-            className={`mt-4 text-center font-semibold ${
-              message.includes("success") ? "text-green-500" : "text-red-500"
-            }`}
-          >
-            {message}
+            {/* Contact Form */}
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="flex flex-col space-y-4"
+            >
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="name"
+                className="border border-gray-300 p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                name="email"
+                className="border border-gray-300 p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                required
+              />
+              <textarea
+                rows="4"
+                placeholder="Your Message"
+                name="message"
+                className="border border-gray-300 p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                disabled={sending}
+                className="bg-emerald-700 text-white py-2 rounded-sm hover:bg-emerald-900 transition"
+              >
+                {sending ? "Sending..." : "Send Message"}
+              </button>
+              {message && (
+                <div
+                  className={`text-center font-semibold ${
+                    message.includes("success")
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  {message}
+                </div>
+              )}
+            </form>
           </div>
-        )}
-      </form>
-    </section>
+        </div>
+      </div>
+    </div>
   );
 };
 
