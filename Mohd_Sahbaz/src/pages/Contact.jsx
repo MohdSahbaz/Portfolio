@@ -2,22 +2,36 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = ({ darkMode, dayMode, nightMode }) => {
   const formRef = useRef();
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
 
   const sendEmail = (e) => {
+    setSending(true);
     e.preventDefault();
     emailjs
-      .sendForm(EMAILJS_SERVICE_ID, formRef.current, EMAILJS_PUBLIC_KEY)
+      .sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      )
       .then(
         () => {
           setMessage("Message sent successfully!");
+          // Ensuring form reset
+          if (formRef.current) {
+            formRef.current.reset(); // Clears the input fields
+          }
+          setSending(false);
         },
         (error) => {
-          setMessage("Failed to send message." + error);
+          setMessage("Failed to send message.");
+          setSending(false);
         }
       );
   };
@@ -44,7 +58,7 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
         <div>
           <input
             type="text"
-            name="user_name"
+            name="name"
             placeholder="Your Name"
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
             required
@@ -54,7 +68,7 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
         <div>
           <input
             type="email"
-            name="user_email"
+            name="email"
             placeholder="Your Email"
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
             required
@@ -74,9 +88,10 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
         <div>
           <button
             type="submit"
-            className="w-full py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300"
+            disabled={sending}
+            className={`w-full py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300}`}
           >
-            Send Message
+            {sending ? "Sending..." : "Send Message"}
           </button>
         </div>
 
