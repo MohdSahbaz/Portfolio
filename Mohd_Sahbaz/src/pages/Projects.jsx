@@ -23,7 +23,7 @@ const projectsData = [
     description:
       "A personal portfolio showcasing my skills, projects, and work experience with dark and light mode support.",
     techStack: ["React", "Tailwind CSS"],
-    liveLink: "",
+    liveLink: "https://sahbaz.onrender.com/",
     repoLink: "https://github.com/MohdSahbaz/Portfolio_New",
   },
   {
