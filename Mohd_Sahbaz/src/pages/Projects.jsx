@@ -7,16 +7,40 @@ const projectsData = [
     description:
       "A web-based application for managing library resources, tracking book loans, and user registrations.",
     techStack: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "#",
-    repoLink: "#",
+    liveLink: "https://lms-client-uo7q.onrender.com/",
+    repoLink: "https://github.com/MohdSahbaz/Library-Management-System-New",
   },
   {
-    name: "Video Player Application",
+    name: "Quiz Application",
+    description:
+      "An interactive multi-round quiz application with a leaderboard and scoring system.",
+    techStack: ["MongoDB", "Express", "React", "Node.js"],
+    liveLink: "",
+    repoLink: "https://github.com/MohdSahbaz/Quiz",
+  },
+  {
+    name: "Portfolio Website",
+    description:
+      "A personal portfolio showcasing my skills, projects, and work experience with dark and light mode support.",
+    techStack: ["React", "Tailwind CSS"],
+    liveLink: "",
+    repoLink: "https://github.com/MohdSahbaz/Portfolio_New",
+  },
+  {
+    name: "Video Player Application (80% Done)",
     description:
       "A feature-rich video player with custom controls, playlist management, and responsive design.",
     techStack: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "#",
-    repoLink: "#",
+    liveLink: "",
+    repoLink: "https://github.com/MohdSahbaz/Video-Player",
+  },
+  {
+    name: "Real-time Group Chat (Text Only)",
+    description:
+      "A simple real-time text-based group chat application using WebSockets.",
+    techStack: ["Node.js", "Express", "Socket.io", "React"],
+    liveLink: "https://real-time-chat-jasg.onrender.com/",
+    repoLink: "https://github.com/MohdSahbaz/Real-Time-Chat",
   },
 ];
 
@@ -66,15 +90,21 @@ const Projects = ({ darkMode, dayMode, nightMode }) => {
                 ))}
               </div>
               <div className="flex space-x-4">
-                <a
-                  href={project.liveLink}
-                  className="text-blue-500 flex items-center space-x-1 hover:underline"
-                >
-                  <FaExternalLinkAlt /> <span>Live Demo</span>
-                </a>
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="blank_"
+                    className="text-blue-500 flex items-center space-x-1 hover:underline"
+                  >
+                    <FaExternalLinkAlt /> <span>Live Demo</span>
+                  </a>
+                )}
                 <a
                   href={project.repoLink}
-                  className="text-gray-500 flex items-center space-x-1 hover:underline"
+                  target="blank_"
+                  className={`${
+                    darkMode ? "text-gray-300" : "text-black"
+                  } flex items-center space-x-1 hover:underline`}
                 >
                   <FaGithub /> <span>GitHub</span>
                 </a>

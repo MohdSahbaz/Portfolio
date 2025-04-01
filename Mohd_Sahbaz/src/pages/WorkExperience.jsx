@@ -23,7 +23,7 @@ const WorkExperience = ({ darkMode, dayMode, nightMode }) => {
       <div
         className={`${
           darkMode ? "bg-gray-800/[0.6] text-gray-300" : "bg-gray-100/[0.4]"
-        } p-5 rounded-sm shadow-md mb-5`}
+        } p-5 rounded-sm shadow-md mb-5 w-fit`}
       >
         <h2
           className={`text-3xl font-bold mb-8 ${

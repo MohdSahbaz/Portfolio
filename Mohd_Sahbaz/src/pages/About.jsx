@@ -7,7 +7,7 @@ const aboutDetails = {
     "Passionate about crafting scalable and efficient web applications.",
   descriptionOne:
     "I am a dedicated Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node.js). I enjoy building high-performance, user-friendly applications that solve real-world problems.",
-  resumeLink: "link-to-resume",
+  resumeLink: "Mohd-Sahbaz-Resume.pdf",
 };
 
 const About = ({ darkMode, dayMode, nightMode }) => {
@@ -46,6 +46,7 @@ const About = ({ darkMode, dayMode, nightMode }) => {
         </p>
         <a
           href={aboutDetails.resumeLink}
+          target="blank_"
           className={`py-2 px-4 rounded-sm border-2 outline-none font-semibold transition-all duration-300 ${
             darkMode
               ? "bg-yellow-500 text-white border-cyan-800 hover:bg-yellow-800"

@@ -2,15 +2,17 @@ import React from "react";
 
 const introductionDetails = {
   name: "Mohd Sahbaz",
+  image: "MohdSahbaz.png",
   role: "Full-Stack Developer",
-  resume: "link",
+  resume: "Mohd-Sahbaz-Resume.pdf",
+  email: "cshabaz188@gmail.com",
 };
 
 const Home = ({ darkMode, dayMode, nightMode }) => {
   return (
     <section
       id="home"
-      className="min-h-screen pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-center md:items-start items-center"
+      className="min-h-screen md:px-30 sm:px-14 px-5 flex flex-col md:flex-row items-center justify-between gap-5 pt-20"
       style={{
         background: darkMode ? nightMode : dayMode,
       }}
@@ -44,6 +46,7 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
         <div className="flex flex-wrap justify-start items-center gap-4">
           <a
             href={introductionDetails.resume}
+            target="blank_"
             className={`py-2 px-4 rounded-sm sm:w-fit w-full text-center border-2 outline-none font-semibold transition-all duration-300 ${
               darkMode
                 ? "bg-yellow-500 text-white border-cyan-800 hover:bg-yellow-800"
@@ -53,7 +56,7 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
             Resume
           </a>
           <a
-            href={introductionDetails.resume}
+            href={`mailto:${introductionDetails.email}`}
             className={`py-2 px-4 rounded-sm sm:w-fit w-full text-center border-2 outline-none font-semibold transition-all duration-300 ${
               darkMode
                 ? "bg-blue-600 text-white border-blue-400 hover:bg-blue-500"
@@ -63,6 +66,13 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
             Hire Me!
           </a>
         </div>
+      </div>
+      <div>
+        <img
+          src={introductionDetails.image}
+          alt="Mohd Sahbaz"
+          className="w-full h-full object-cover rounded-full border-4 border-gray-300 shadow-md m-1"
+        />
       </div>
     </section>
   );
