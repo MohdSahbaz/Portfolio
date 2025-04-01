@@ -75,17 +75,31 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
                 Feel free to reach out through social media, phone or email!
               </p>
               <div className="mt-4 space-y-3">
-                <p className="flex items-center text-gray-700">
+                <a
+                  href="https://www.google.com/maps?q=Mumbai,India"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center w-fit text-gray-700 hover:text-emerald-900 transition"
+                >
                   <FaMapMarkerAlt className="text-emerald-700 mr-2" /> Mumbai,
                   India
-                </p>
-                <p className="flex items-center text-gray-700">
+                </a>
+
+                <a
+                  href="tel:9136307464"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-gray-700 w-fit"
+                >
                   <FaPhone className="text-emerald-700 mr-2" /> +913 630 7464
-                </p>
-                <p className="flex items-center text-gray-700">
+                </a>
+                <a
+                  href="mailto:cshabaz188@gmail.com"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-gray-700 w-fit"
+                >
                   <FaEnvelope className="text-emerald-700 mr-2" />{" "}
                   cshabaz188@gmail.com
-                </p>
+                </a>
               </div>
 
               {/* Social Media */}
