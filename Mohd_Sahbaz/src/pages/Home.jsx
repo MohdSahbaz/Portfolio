@@ -10,7 +10,7 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
   return (
     <section
       id="home"
-      className="min-h-screen pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-center"
+      className="min-h-screen pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-center md:items-start items-center"
       style={{
         background: darkMode ? nightMode : dayMode,
       }}

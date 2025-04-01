@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = ({ darkMode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false); // Close menu on link click
   };
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const nightMode =
     "linear-gradient(45deg, rgba(30,30,30,1) 50%, rgba(5,143,89,1) 50%, rgba(5,143,89,1) 100%)";
@@ -17,7 +23,8 @@ const Navbar = ({ darkMode }) => {
         background: darkMode ? nightMode : dayMode,
       }}
     >
-      <div className="flex justify-between items-center px-10">
+      <div className="flex justify-between items-center px-6 md:px-10">
+        {/* Logo */}
         <h1
           className={`${
             darkMode ? "text-white" : "text-[#003e21]"
@@ -25,69 +32,72 @@ const Navbar = ({ darkMode }) => {
         >
           Mohd Sahbaz
         </h1>
-        <ul className="flex space-x-6">
-          <li>
-            <button
-              onClick={() => scrollToSection("home")}
-              className={`${
-                darkMode ? "text-white" : "text-[#003e21]"
-              } hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300`}
-            >
-              Home
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("about")}
-              className={`${
-                darkMode ? "text-white" : "text-[#003e21]"
-              } hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300`}
-            >
-              About
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("skills")}
-              className={`${
-                darkMode ? "text-white" : "text-[#003e21]"
-              } hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300`}
-            >
-              Skills
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className={`${
-                darkMode ? "text-white" : "text-[#003e21]"
-              } hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300`}
-            >
-              Projects
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("work-experience")}
-              className={`${
-                darkMode ? "text-white" : "text-[#003e21]"
-              } hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300`}
-            >
-              Work Experience
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className={`${
-                darkMode ? "text-white" : "text-[#003e21]"
-              } hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300`}
-            >
-              Contact
-            </button>
-          </li>
+
+        {/* Hamburger Menu (Mobile) */}
+        <button
+          className="md:hidden text-2xl"
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? (
+            <FaTimes className={darkMode ? "text-white" : "text-[#003e21]"} />
+          ) : (
+            <FaBars className={darkMode ? "text-white" : "text-[#003e21]"} />
+          )}
+        </button>
+
+        {/* Navigation Links */}
+        <ul
+          className={`md:flex space-x-6 hidden ${
+            darkMode ? "text-white" : "text-[#003e21]"
+          }`}
+        >
+          {[
+            "home",
+            "about",
+            "skills",
+            "projects",
+            "work-experience",
+            "contact",
+          ].map((item) => (
+            <li key={item}>
+              <button
+                onClick={() => scrollToSection(item)}
+                className="hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <ul
+          className={`md:hidden absolute top-15 right-0 py-5 px-4 flex flex-col items-center space-y-4 transition-all duration-300 ${
+            darkMode ? "bg-gray-900/[0.9] text-white" : "bg-white text-[#003e21]"
+          } shadow-md`}
+        >
+          {[
+            "home",
+            "about",
+            "skills",
+            "projects",
+            "work-experience",
+            "contact",
+          ].map((item) => (
+            <li key={item}>
+              <button
+                onClick={() => scrollToSection(item)}
+                className="hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 };
