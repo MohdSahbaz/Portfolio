@@ -54,7 +54,7 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
   return (
     <div
       id="contact"
-      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col items-center"
+      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col items-center justify-center"
       style={{
         background: darkMode ? nightMode : dayMode,
       }}

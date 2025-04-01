@@ -14,7 +14,7 @@ const About = ({ darkMode, dayMode, nightMode }) => {
   return (
     <section
       id="about"
-      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-start items-end"
+      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-center items-end"
       style={{
         background: darkMode ? nightMode : dayMode,
       }}
