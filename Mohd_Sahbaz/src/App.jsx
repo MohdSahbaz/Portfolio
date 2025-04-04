@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Navbar darkMode={darkMode} />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Home darkMode={darkMode} nightMode={nightMode} dayMode={dayMode} />
       <About darkMode={darkMode} nightMode={nightMode} dayMode={dayMode} />
       <Skills darkMode={darkMode} nightMode={nightMode} dayMode={dayMode} />
