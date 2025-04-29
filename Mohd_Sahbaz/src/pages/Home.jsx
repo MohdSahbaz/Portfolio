@@ -48,7 +48,7 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
             href={introductionDetails.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-block py-2 px-5 rounded-md border-2 font-semibold transition duration-300 cursor-pointer ${
+            className={`py-2 px-4 rounded-sm sm:w-fit w-full text-center border-2 outline-none font-semibold transition-all duration-300 ${
               darkMode
                 ? "bg-emerald-600 text-white border-emerald-400 hover:bg-emerald-700"
                 : "bg-emerald-400 text-black border-emerald-600 hover:bg-emerald-500"
