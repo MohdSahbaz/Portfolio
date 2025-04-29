@@ -6,7 +6,7 @@ import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Navbar from "./pages/Navbar";
-import Projects from "./pages/Projects";
+import Projects from "./pages/projects/Projects";
 import Skills from "./pages/Skills";
 import WorkExperience from "./pages/WorkExperience";
 

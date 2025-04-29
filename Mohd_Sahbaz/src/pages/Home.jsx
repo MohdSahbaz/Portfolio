@@ -3,8 +3,8 @@ import React from "react";
 const introductionDetails = {
   name: "Mohd Sahbaz",
   image: "MohdSahbaz.png",
-  role: "Full-Stack Developer",
-  resume: "Mohd-Sahbaz-Resume.pdf",
+  role: "Software Developer",
+  resume: "Mohd_Sahbaz_Resume.pdf",
   email: "cshabaz188@gmail.com",
 };
 
@@ -46,21 +46,23 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
         <div className="flex flex-wrap justify-start items-center gap-4">
           <a
             href={introductionDetails.resume}
-            target="blank_"
-            className={`py-2 px-4 rounded-sm sm:w-fit w-full text-center border-2 outline-none font-semibold transition-all duration-300 ${
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-block py-2 px-5 rounded-md border-2 font-semibold transition duration-300 cursor-pointer ${
               darkMode
-                ? "bg-yellow-500 text-white border-cyan-800 hover:bg-yellow-800"
-                : "bg-green-300 text-black border-yellow-700 hover:bg-green-400"
+                ? "bg-emerald-600 text-white border-emerald-400 hover:bg-emerald-700"
+                : "bg-emerald-400 text-black border-emerald-600 hover:bg-emerald-500"
             }`}
           >
             Resume
           </a>
+
           <a
             href={`mailto:${introductionDetails.email}`}
             className={`py-2 px-4 rounded-sm sm:w-fit w-full text-center border-2 outline-none font-semibold transition-all duration-300 ${
               darkMode
                 ? "bg-blue-600 text-white border-blue-400 hover:bg-blue-500"
-                : "bg-green-400 text-black border-yellow-700 hover:bg-green-500"
+                : "bg-blue-500 text-white border-blue-600 hover:bg-blue-600"
             }`}
           >
             Hire Me!

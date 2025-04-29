@@ -3,65 +3,25 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projectsData = [
   {
-    name: "Library Management System",
+    name: "The Four Pieces",
     description:
-      "A web-based application for managing library resources, tracking book loans, and user registrations.",
-    techStack: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "https://lms-client-uo7q.onrender.com/",
-    repoLink: "https://github.com/MohdSahbaz/Library-Management-System-New",
-  },
-  {
-    name: "Quiz Application",
-    description:
-      "An interactive multi-round quiz application with a leaderboard and scoring system.",
-    techStack: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "",
-    repoLink: "https://github.com/MohdSahbaz/Quiz",
-  },
-  {
-    name: "Portfolio Website",
-    description:
-      "A personal portfolio showcasing my skills, projects, and work experience with dark and light mode support.",
-    techStack: ["React", "Tailwind CSS"],
-    liveLink: "https://sahbaz.onrender.com/",
-    repoLink: "https://github.com/MohdSahbaz/Portfolio_New",
-  },
-  {
-    name: "Video Player Application (80% Done)",
-    description:
-      "A feature-rich video player with custom controls, playlist management, and responsive design.",
-    techStack: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "",
-    repoLink: "https://github.com/MohdSahbaz/Video-Player",
-  },
-  {
-    name: "Real-time Group Chat (Text Only)",
-    description:
-      "A simple real-time text-based group chat application using WebSockets.",
-    techStack: ["Node.js", "Express", "Socket.io", "React"],
-    liveLink: "https://real-time-chat-jasg.onrender.com/",
-    repoLink: "https://github.com/MohdSahbaz/Real-Time-Chat",
+      "A fast-paced time challenge where players must collect all four pieces before the clock runs out. Strategy and speed are key!",
+    techStack: ["Godot Engine", "GDScript"],
+    liveLink: "https://gamejolt.com/games/the_four_pieces_I/989741",
+    repoLink: "https://github.com/MohdSahbaz/The-Four-Pieces",
   },
 ];
 
-const Projects = ({ darkMode, dayMode, nightMode }) => {
+const GameProjects = ({ darkMode, dayMode, nightMode }) => {
   return (
-    <section
-      id="projects"
-      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-start"
-      style={{ background: darkMode ? nightMode : dayMode }}
-    >
-      <div
-        className={`${
-          darkMode ? "bg-gray-800/[0.3] text-gray-300" : "bg-gray-100/[0.4]"
-        } p-5 rounded-sm shadow-md mb-5`}
-      >
+    <section>
+      <div>
         <h1
           className={`text-3xl font-bold mb-8 ${
             darkMode ? "text-white" : "text-gray-800"
           }`}
         >
-          Projects
+          Game Projects
         </h1>
         <div className="grid md:grid-cols-2 gap-6 mb-5">
           {projectsData.map((project, index) => (
@@ -117,4 +77,4 @@ const Projects = ({ darkMode, dayMode, nightMode }) => {
   );
 };
 
-export default Projects;
+export default GameProjects;
