@@ -10,6 +10,14 @@ const projectsData = [
     liveLink: "https://gamejolt.com/games/the_four_pieces_I/989741",
     repoLink: "https://github.com/MohdSahbaz/The-Four-Pieces",
   },
+  {
+    name: "Flappy Horror",
+    description:
+      "A spooky 2D mobile game inspired by Flappy Bird — but with a terrifying twist. You control a floating ghost navigating through a haunted world filled with deadly bones and eerie shadows, all while collecting glowing souls.",
+    techStack: ["Godot Engine", "GDScript"],
+    liveLink: "https://gamejolt.com/games/flappyhorror/992320",
+    repoLink: "https://github.com/MohdSahbaz/Flappy-Horror",
+  },
 ];
 
 const GameProjects = ({ darkMode, dayMode, nightMode }) => {

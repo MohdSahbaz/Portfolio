@@ -12,10 +12,9 @@ import {
   SiTailwindcss,
   SiExpress,
   SiMongodb,
-  SiFirebase,
   SiPostgresql,
-  SiGraphql,
   SiPostman,
+  SiGodotengine,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -45,6 +44,16 @@ const Skills = ({ darkMode, dayMode, nightMode }) => {
       {
         name: "VS Code",
         icon: <VscVscode className="text-blue-500" />,
+      },
+    ],
+    "Game Development": [
+      {
+        name: "Godot Engine",
+        icon: <SiGodotengine className="text-blue-600" />,
+      },
+      {
+        name: "GDScript",
+        icon: <SiGodotengine className="text-gray-700" />,
       },
     ],
   };
