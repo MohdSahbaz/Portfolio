@@ -46,16 +46,6 @@ const Skills = ({ darkMode, dayMode, nightMode }) => {
         icon: <VscVscode className="text-blue-500" />,
       },
     ],
-    "Game Development": [
-      {
-        name: "Godot Engine",
-        icon: <SiGodotengine className="text-blue-600" />,
-      },
-      {
-        name: "GDScript",
-        icon: <SiGodotengine className="text-gray-700" />,
-      },
-    ],
   };
 
   return (

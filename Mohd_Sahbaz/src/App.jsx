@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 import About from "./pages/About";
-import Achievements from "./pages/Achievements";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Navbar from "./pages/Navbar";
-import Projects from "./pages/projects/Projects";
+import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import WorkExperience from "./pages/WorkExperience";
+import ScrollTitleManager from "./utils/ScrollTitleManager";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <>
+      <ScrollTitleManager />
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Home darkMode={darkMode} nightMode={nightMode} dayMode={dayMode} />
       <About darkMode={darkMode} nightMode={nightMode} dayMode={dayMode} />

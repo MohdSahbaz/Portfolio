@@ -44,16 +44,24 @@ const projectsData = [
   },
 ];
 
-const WebProjects = ({ darkMode, dayMode, nightMode }) => {
+const Projects = ({ darkMode, dayMode, nightMode }) => {
   return (
-    <section>
-      <div>
+    <section
+      id="projects"
+      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-start"
+      style={{ background: darkMode ? nightMode : dayMode }}
+    >
+      <div
+        className={`${
+          darkMode ? "bg-gray-800/[0.3] text-gray-300" : "bg-gray-100/[0.4]"
+        } min-h-[calc(100vh-56px)] mb-5 scroll-mt-15 pt-5 md:px-5 sm:px-14 px-5 flex flex-col justify-start rounded-sm shadow-md`}
+      >
         <h1
-          className={`text-3xl font-bold mb-8 ${
+          className={`text-3xl font-bold mb-4 ${
             darkMode ? "text-white" : "text-gray-800"
           }`}
         >
-          Web Projects
+          Projects
         </h1>
         <div className="grid md:grid-cols-2 gap-6 mb-5">
           {projectsData.map((project, index) => (
@@ -109,4 +117,4 @@ const WebProjects = ({ darkMode, dayMode, nightMode }) => {
   );
 };
 
-export default WebProjects;
+export default Projects;
