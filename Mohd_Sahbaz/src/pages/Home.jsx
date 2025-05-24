@@ -2,7 +2,7 @@ import React from "react";
 
 const introductionDetails = {
   name: "Mohd Sahbaz",
-  image: "MohdSahbaz.png",
+  image: "MohdSahbaz.webp",
   role: "Software Developer",
   resume: "Mohd_Sahbaz_Resume.pdf",
   email: "cshabaz188@gmail.com",
