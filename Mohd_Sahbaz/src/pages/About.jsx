@@ -7,28 +7,24 @@ const aboutDetails = {
     "Passionate about crafting scalable and efficient web applications.",
   descriptionOne:
     "I am a dedicated Software Developer specializing in the MERN stack (MongoDB, Express, React, Node.js). I enjoy building high-performance, user-friendly applications that solve real-world problems.",
-  resumeLink: "Mohd_Sahbaz_Resume.pdf",
+  resumeLink: "Mohd-Sahbaz-Resume.pdf",
 };
 
 const About = ({ darkMode, dayMode, nightMode }) => {
   return (
     <section
       id="about"
-      className="min-h-[calc(100vh-56px)] scroll-mt-15 md:pt-0 pt-15 md:px-14 sm:px-14 px-5 flex items-center"
+      className="min-h-[calc(100vh-56px)] scroll-mt-15 md:pt-0 pt-0 md:px-14 sm:px-14 px-5 flex items-center"
       style={{
         background: darkMode ? nightMode : dayMode,
       }}
     >
       <div
-        className={`w-full p-6 sm:p-8 rounded-md shadow-md mb-5 ${
+        className={`w-full p-6 sm:p-8 rounded-md shadow-md mb- ${
           darkMode ? "bg-gray-800/[0.6] text-gray-300" : "bg-gray-100/[0.9]"
         }`}
       >
-        <div
-          className={`p-6 sm:p-8 rounded-md shadow-md ${
-            darkMode ? "bg-gray-800/[0.6]" : "bg-white/[0.3]"
-          }`}
-        >
+        <div className={`p-6 sm:p-8 rounded-sm shadow-md `}>
           <h1
             className={`text-3xl sm:text-4xl font-bold mb-4 ${
               darkMode ? "text-white" : "text-black/[0.7]"

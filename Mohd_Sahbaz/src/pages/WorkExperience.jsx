@@ -17,7 +17,7 @@ const WorkExperience = ({ darkMode, dayMode, nightMode }) => {
   return (
     <section
       id="work-experience"
-      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-center"
+      className="min-h-[calc(100vh-56px)] scroll-mt-15 md:px-14 sm:px-14 px-5 flex flex-col justify-center items-center"
       style={{ background: darkMode ? nightMode : dayMode }}
     >
       <div

@@ -4,8 +4,8 @@ const introductionDetails = {
   name: "Mohd Sahbaz",
   image: "MohdSahbaz.webp",
   role: "Software Developer",
-  resume: "Mohd_Sahbaz_Resume.pdf",
-  email: "cshabaz188@gmail.com",
+  resume: "Mohd-Sahbaz-Resume.pdf",
+  email: "csahbaz188@gmail.com",
 };
 
 const Home = ({ darkMode, dayMode, nightMode }) => {
