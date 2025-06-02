@@ -93,12 +93,12 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
                   <FaPhone className="text-emerald-700 mr-2" /> +913 630 7464
                 </a>
                 <a
-                  href="mailto:cshabaz188@gmail.com"
+                  href="mailto:csahbaz188@gmail.com"
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-700 w-fit"
                 >
                   <FaEnvelope className="text-emerald-700 mr-2" />{" "}
-                  cshabaz188@gmail.com
+                  csahbaz188@gmail.com
                 </a>
               </div>
 

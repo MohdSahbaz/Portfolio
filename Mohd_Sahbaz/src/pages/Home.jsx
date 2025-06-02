@@ -12,7 +12,7 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
   return (
     <section
       id="home"
-      className="min-h-screen md:px-30 sm:px-14 px-5 flex flex-col md:flex-row items-center justify-between gap-5 pt-20"
+      className="min-h-screen md:px-30 sm:px-14 px-5 flex flex-col md:flex-row items-center md:justify-between gap-5 pt-20"
       style={{
         background: darkMode ? nightMode : dayMode,
       }}
@@ -73,7 +73,7 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
         <img
           src={introductionDetails.image}
           alt="Mohd Sahbaz"
-          className="w-full h-full object-cover rounded-full border-4 border-gray-300 shadow-md m-1"
+          className="w-[150px] h-[250px] object-cover rounded-full border-4 border-gray-300 shadow-md m-1"
         />
       </div>
     </section>
