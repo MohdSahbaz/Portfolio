@@ -47,24 +47,15 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
           <div className="flex flex-wrap justify-start items-center gap-4">
             <a
               href={introductionDetails.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`py-2 px-4 rounded-sm sm:w-fit w-full text-center border-2 outline-none font-semibold transition-all duration-300 ${
-                darkMode
-                  ? "bg-emerald-600 text-white border-emerald-400 hover:bg-emerald-700"
-                  : "bg-emerald-400 text-black border-emerald-600 hover:bg-emerald-500"
-              }`}
+              download
+              className="inline-block sm:w-fit w-full text-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-teal-500 to-cyan-600 rounded shadow hover:shadow-lg hover:from-teal-600 hover:to-cyan-700 transition-all duration-300"
             >
               Resume
             </a>
 
             <a
               href={`mailto:${introductionDetails.email}`}
-              className={`py-2 px-4 rounded-sm sm:w-fit w-full text-center border-2 outline-none font-semibold transition-all duration-300 ${
-                darkMode
-                  ? "bg-blue-600 text-white border-blue-400 hover:bg-blue-500"
-                  : "bg-blue-500 text-white border-blue-600 hover:bg-blue-600"
-              }`}
+              className="inline-block sm:w-fit w-full text-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded shadow-md hover:shadow-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300"
             >
               Hire Me!
             </a>
