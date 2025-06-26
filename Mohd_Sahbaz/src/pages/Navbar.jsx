@@ -49,7 +49,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       <li key={item}>
         <button
           onClick={() => scrollToSection(item)}
-          className={`relative font-semibold transition-all duration-300 ${
+          className={`relative font-semibold hover:cursor-pointer transition-all duration-300 ${
             activeSection === item
               ? darkMode ? "text-cyan-300" : "text-fuchsia-700"
               : darkMode
