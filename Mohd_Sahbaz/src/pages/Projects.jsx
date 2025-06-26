@@ -11,14 +11,6 @@ const projectsData = [
     repoLink: "https://github.com/MohdSahbaz/Library-Management-System-New",
   },
   {
-    name: "Quiz Application",
-    description:
-      "An interactive multi-round quiz application with a leaderboard and scoring system.",
-    techStack: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "",
-    repoLink: "https://github.com/MohdSahbaz/Quiz",
-  },
-  {
     name: "Portfolio Website",
     description:
       "A personal portfolio showcasing my skills, projects, and work experience with dark and light mode support.",
@@ -27,12 +19,20 @@ const projectsData = [
     repoLink: "https://github.com/MohdSahbaz/Portfolio_New",
   },
   {
-    name: "Video Player Application (80% Done)",
+    name: "Video Player Application",
     description:
       "A feature-rich video player with custom controls, playlist management, and responsive design.",
     techStack: ["PostgreSQL", "Express", "React", "Node.js"],
     liveLink: "",
     repoLink: "https://github.com/MohdSahbaz/Video-Player",
+  },
+  {
+    name: "Quiz Application",
+    description:
+      "An interactive multi-round quiz application with a leaderboard and scoring system.",
+    techStack: ["MongoDB", "Express", "React", "Node.js"],
+    liveLink: "",
+    repoLink: "https://github.com/MohdSahbaz/Quiz",
   },
   {
     name: "Real-time Group Chat (Text Only)",
@@ -48,13 +48,13 @@ const Projects = ({ darkMode, dayMode, nightMode }) => {
   return (
     <section
       id="projects"
-      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col justify-start"
+      className="scroll-mt-15 py-15 md:px-14 sm:px-14 px-5 flex flex-col justify-start"
       style={{ background: darkMode ? nightMode : dayMode }}
     >
       <div
         className={`${
           darkMode ? "bg-gray-800/[0.3] text-gray-300" : "bg-gray-100/[0.4]"
-        } min-h-[calc(100vh-56px)] mb-5 scroll-mt-15 pt-5 md:px-5 sm:px-14 px-5 flex flex-col justify-start rounded-sm shadow-md`}
+        } scroll-mt-15 pt-5 md:px-5 sm:px-14 px-5 flex flex-col justify-start rounded-sm shadow-md max-w-7xl mx-auto w-full`}
       >
         <h1
           className={`text-3xl font-bold mb-4 ${

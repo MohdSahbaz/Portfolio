@@ -54,7 +54,7 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
   return (
     <div
       id="contact"
-      className="min-h-[calc(100vh-56px)] scroll-mt-15 pt-16 md:px-14 sm:px-14 px-5 flex flex-col items-center justify-center"
+      className="scroll-mt-15 py-15 md:px-14 sm:px-14 px-5 flex flex-col items-center justify-center"
       style={{
         background: darkMode ? nightMode : dayMode,
       }}
@@ -62,9 +62,9 @@ const Contact = ({ darkMode, dayMode, nightMode }) => {
       <div
         className={`${
           darkMode ? "bg-gray-800/[0.6] text-gray-300" : "bg-gray-100/[0.9]"
-        } p-5 rounded-sm shadow-md mb-5`}
+        } p-5 rounded-sm shadow-md max-w-7xl mx-auto w-full`}
       >
-        <div className="max-w-4xl w-full bg-white/[0.5]  text-gray-900 p-6 rounded-sm shadow-lg">
+        <div className="w-full bg-white/[0.5]  text-gray-900 p-6 rounded-sm shadow-lg">
           {/* Contact Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>

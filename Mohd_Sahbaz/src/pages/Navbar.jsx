@@ -1,21 +1,72 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false); // Close menu on link click
+    setIsOpen(false); // Close mobile menu
   };
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const sections = [
+    "home",
+    "about",
+    "skills",
+    "projects",
+    "work-experience",
+    "contact",
+  ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((entry) => entry.isIntersecting);
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const nightMode =
     "linear-gradient(45deg, rgba(30,30,30,1) 50%, rgba(5,143,89,1) 50%, rgba(5,143,89,1) 100%)";
   const dayMode =
     "linear-gradient(45deg, rgba(249,255,110) 50%, rgba(84,255,188,1) 50%, rgba(84,255,188,1) 100%)";
+
+  const renderLinks = (isMobile = false) =>
+    sections.map((item) => (
+      <li key={item}>
+        <button
+          onClick={() => scrollToSection(item)}
+          className={`relative font-semibold transition-all duration-300 ${
+            activeSection === item
+              ? darkMode ? "text-cyan-300" : "text-fuchsia-700"
+              : darkMode
+              ? "text-white"
+              : "text-[#003e21]"
+          }`}
+        >
+          <span
+            className={`after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100 ${
+              activeSection === item ? "after:scale-x-100" : ""
+            }`}
+          >
+            {item.charAt(0).toUpperCase() + item.slice(1)}
+          </span>
+        </button>
+      </li>
+    ));
 
   return (
     <nav
@@ -24,7 +75,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         background: darkMode ? nightMode : dayMode,
       }}
     >
-      <div className="flex justify-between items-center px-6 md:px-10">
+      <div className="flex justify-between items-center px-6 md:px-10 max-w-7xl mx-auto">
         {/* Logo */}
         <h1
           className={`${
@@ -35,6 +86,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         </h1>
 
         <div className="flex gap-4 justify-center items-center">
+          {/* Dark Mode Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="font-semibold cursor-pointer flex items-center gap-2"
@@ -66,30 +118,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             )}
           </button>
 
-          {/* Navigation Links */}
-          <ul
-            className={`md:flex space-x-6 hidden ${
-              darkMode ? "text-white" : "text-[#003e21]"
-            }`}
-          >
-            {[
-              "home",
-              "about",
-              "skills",
-              "projects",
-              "work-experience",
-              "contact",
-            ].map((item) => (
-              <li key={item}>
-                <button
-                  onClick={() => scrollToSection(item)}
-                  className="hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300"
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </button>
-              </li>
-            ))}
-          </ul>
+          {/* Desktop Nav */}
+          <ul className="md:flex space-x-6 hidden">{renderLinks()}</ul>
         </div>
       </div>
 
@@ -102,23 +132,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               : "bg-white text-[#003e21]"
           } shadow-md`}
         >
-          {[
-            "home",
-            "about",
-            "skills",
-            "projects",
-            "work-experience",
-            "contact",
-          ].map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => scrollToSection(item)}
-                className="hover:text-gray-600 font-semibold cursor-pointer transition-all duration-300"
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </button>
-            </li>
-          ))}
+          {renderLinks(true)}
         </ul>
       )}
     </nav>

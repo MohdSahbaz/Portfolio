@@ -3,7 +3,7 @@ import React from "react";
 const Footer = ({ darkMode, dayMode, nightMode }) => {
   return (
     <footer
-      className={`text-center`}
+      className={`text-center pt-15`}
       style={{
         background: darkMode ? nightMode : dayMode,
         color: darkMode ? "white" : "black",
