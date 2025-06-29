@@ -11,6 +11,14 @@ const projectsData = [
     repoLink: "https://github.com/MohdSahbaz/Library-Management-System-New",
   },
   {
+    name: "GuideSpire",
+    description:
+      "A game guide platform featuring walkthroughs, banners, and curated content for popular titles like Wuthering Waves and Genshin Impact, with a modern and responsive UI.",
+    techStack: ["React", "Tailwind CSS", "Spring Boot", "MongoDB"],
+    liveLink: "https://guide-spire.vercel.app/",
+    repoLink: "https://github.com/MohdSahbaz/GuideSpire", // Replace with your actual repo link
+  },
+  {
     name: "Portfolio Website",
     description:
       "A personal portfolio showcasing my skills, projects, and work experience with dark and light mode support.",
