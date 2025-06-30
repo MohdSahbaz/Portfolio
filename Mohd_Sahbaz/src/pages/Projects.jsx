@@ -34,22 +34,6 @@ const projectsData = [
     liveLink: "",
     repoLink: "https://github.com/MohdSahbaz/Video-Player",
   },
-  {
-    name: "Quiz Application",
-    description:
-      "An interactive multi-round quiz application with a leaderboard and scoring system.",
-    techStack: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "",
-    repoLink: "https://github.com/MohdSahbaz/Quiz",
-  },
-  {
-    name: "Real-time Group Chat (Text Only)",
-    description:
-      "A simple real-time text-based group chat application using WebSockets.",
-    techStack: ["Node.js", "Express", "Socket.io", "React"],
-    liveLink: "https://real-time-chat-jasg.onrender.com/",
-    repoLink: "https://github.com/MohdSahbaz/Real-Time-Chat",
-  },
 ];
 
 const Projects = ({ darkMode, dayMode, nightMode }) => {
@@ -119,6 +103,24 @@ const Projects = ({ darkMode, dayMode, nightMode }) => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mx-auto text-center py-6">
+          <a
+            href="https://github.com/MohdSahbaz?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-2 px-6 py-2 text-white font-medium rounded shadow-lg transition duration-300 ease-in-out
+      bg-gradient-to-r
+      ${
+        darkMode
+          ? "from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
+          : "from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+      }`}
+          >
+            <FaGithub className="text-lg" />
+            View More
+            <span className="text-xl">→</span>
+          </a>
         </div>
       </div>
     </section>

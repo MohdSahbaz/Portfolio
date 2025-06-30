@@ -3,16 +3,6 @@ import React from "react";
 const WorkExperience = ({ darkMode, dayMode, nightMode }) => {
   const experiences = [
     {
-      title: "Frontend Developer Freelance",
-      company: "NorthStar Technologies International LTD.",
-      duration: "Jun 2025 - Present",
-      responsibilities: [
-        "Developing and optimizing user interfaces using React and Tailwind CSS.",
-        "Collaborating with backend developers to integrate APIs.",
-        "Enhancing UI/UX to improve accessibility and responsiveness.",
-      ],
-    },
-    {
       title: "Frontend Developer Intern",
       company: "NorthStar Technologies International LTD.",
       duration: "Feb 2025 - Jun 2025",
