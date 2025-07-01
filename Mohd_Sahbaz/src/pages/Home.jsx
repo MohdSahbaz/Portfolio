@@ -47,7 +47,19 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
           <div className="flex flex-wrap justify-start items-center gap-4">
             <a
               href={introductionDetails.resume}
-              download
+              onClick={(e) => {
+                e.preventDefault();
+                // Open in new tab
+                window.open(introductionDetails.resume, "_blank");
+
+                // Trigger download
+                const link = document.createElement("a");
+                link.href = introductionDetails.resume;
+                link.download = "Mohd-Sahbaz-Resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               className="inline-block sm:w-fit w-full text-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-teal-500 to-cyan-600 rounded shadow hover:shadow-lg hover:from-teal-600 hover:to-cyan-700 transition-all duration-300"
             >
               Resume
