@@ -65,7 +65,7 @@ const Home = ({ darkMode, dayMode, nightMode }) => {
           <img
             src={introductionDetails.image}
             alt="Mohd Sahbaz"
-            className="h-[250px] object-cover rounded-full border-4 border-gray-300 shadow-md m-1 grayscale"
+            className="h-[250px] object-cover rounded-full border-4 border-gray-300 shadow-md m-1 grayscale-80"
           />
         </div>
       </div>
