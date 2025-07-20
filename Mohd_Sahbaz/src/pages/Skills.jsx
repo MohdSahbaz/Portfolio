@@ -19,6 +19,7 @@ import {
   SiSpring,
   SiVite,
   SiIntellijidea,
+  SiSwagger,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -33,7 +34,6 @@ const Skills = ({ darkMode, dayMode, nightMode }) => {
         name: "Tailwind CSS",
         icon: <SiTailwindcss className="text-cyan-400" />,
       },
-      { name: "Vite", icon: <SiVite className="text-purple-500" /> },
     ],
     Backend: [
       { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
@@ -44,7 +44,7 @@ const Skills = ({ darkMode, dayMode, nightMode }) => {
     Database: [
       { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
       // { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" /> },
-      // { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
+      { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
     ],
     DevOps: [
       // { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
@@ -56,10 +56,12 @@ const Skills = ({ darkMode, dayMode, nightMode }) => {
     ],
     Tools: [
       { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+      { name: "Vite", icon: <SiVite className="text-purple-500" /> },
+      { name: "Swagger", icon: <SiSwagger className="text-green-500" /> },
       { name: "VS Code", icon: <VscVscode className="text-blue-500" /> },
       {
         name: "IntelliJ IDEA",
-        icon: <SiIntellijidea className="text-purple-700" />,
+        icon: <SiIntellijidea className="text-purple-700" />
       },
     ],
   };
