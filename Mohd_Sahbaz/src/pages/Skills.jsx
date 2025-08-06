@@ -20,8 +20,10 @@ import {
   SiVite,
   SiIntellijidea,
   SiSwagger,
+  SiDotnet,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import { PiFileCSharpBold } from "react-icons/pi";
 
 const Skills = ({ darkMode, dayMode, nightMode }) => {
   const skills = {
@@ -40,11 +42,13 @@ const Skills = ({ darkMode, dayMode, nightMode }) => {
       { name: "Express.js", icon: <SiExpress className="text-gray-500" /> },
       { name: "Java", icon: <FaJava className="text-red-500" /> },
       { name: "Spring Boot", icon: <SiSpring className="text-green-600" /> },
+      { name: "C#", icon: <PiFileCSharpBold className="text-purple-700" /> },
+      { name: ".Net Core", icon: <SiDotnet className="text-blue-700" /> },
     ],
     Database: [
       { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
-      // { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" /> },
       { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
+      // { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" /> },
     ],
     DevOps: [
       // { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
@@ -61,7 +65,7 @@ const Skills = ({ darkMode, dayMode, nightMode }) => {
       { name: "VS Code", icon: <VscVscode className="text-blue-500" /> },
       {
         name: "IntelliJ IDEA",
-        icon: <SiIntellijidea className="text-purple-700" />
+        icon: <SiIntellijidea className="text-purple-700" />,
       },
     ],
   };
